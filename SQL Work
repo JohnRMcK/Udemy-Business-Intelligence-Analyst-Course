@@ -1,0 +1,71 @@
+SQL work
+
+SELECT 
+    first_name, last_name
+FROM
+    employees;
+    
+SELECT 
+    *
+FROM
+    employees;
+
+SELECT 
+    dept_no
+FROM
+    departments;
+
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    first_name = 'Denis';
+    
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    first_name = 'Elvis';
+    
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    first_name = 'Kellie' AND gender = 'F';
+    
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    first_name = 'Kellie'
+        OR first_name = 'Aruna';
+
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    gender = 'F'
+        AND (first_name = 'Kellie' OR first_name = 'Aruna');
+        
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    first_name = 'Cathie'
+        OR first_name = 'Mark'
+        OR first_name = 'Nathan';
+        
+/* The above works but is sloppy, there is a better way of doing this function by using the IN term*/
+
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    first_name IN ('Cathie' , 'Mark', 'Nathan');

@@ -69,3 +69,33 @@ FROM
     employees
 WHERE
     first_name IN ('Cathie' , 'Mark', 'Nathan');
+    
+	/* now lets us NOT IN */
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    first_name NOT IN ('John' , 'Mark', 'Jacob');
+    
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    hire_date LIKE ('%2000%')
+        AND first_name LIKE ('Mark%');
+        
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    first_name LIKE ('%Jack%');
+
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    first_name NOT LIKE ('%Jack%');

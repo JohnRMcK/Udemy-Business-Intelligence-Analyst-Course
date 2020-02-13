@@ -121,3 +121,65 @@ FROM
     departments
 WHERE
     dept_no IS NOT NULL; 
+
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    gender = 'f'
+        AND hire_date >= '2000-01-01';
+        
+SELECT 
+    *
+FROM
+    salaries
+WHERE
+    salary > 150000;
+    
+SELECT DISTINCT
+    gender
+FROM
+    employees;
+    
+SELECT DISTINCT
+    hire_date
+FROM
+    employees;
+    
+/*starting aggregate functions COUNT SUM MIN MAX and AVG*/
+
+SELECT 
+    COUNT(emp_no)
+FROM
+    employees;  
+    
+SELECT 
+    COUNT(DISTINCT first_name)
+FROM
+    employees; 
+    
+SELECT 
+    COUNT(*)
+FROM
+    salaries
+WHERE
+    salary >= 100000;
+    
+SELECT 
+    *
+FROM
+    employees
+ORDER BY first_name;  /*assumes ascending unless specified.*/
+
+SELECT 
+    *
+FROM
+    employees
+ORDER BY emp_no DESC;
+SELECT 
+    *
+FROM
+    employees
+ORDER BY first_name , last_name ASC;
+

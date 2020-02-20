@@ -183,3 +183,17 @@ FROM
     employees
 ORDER BY first_name , last_name ASC;
 
+SELECT 
+    *
+FROM
+    employees
+ORDER BY emp_no DESC;
+SELECT 
+    *
+FROM
+    employees
+ORDER BY first_name , last_name ASC;
+
+/* GROUP BY must be placed after WHERE and before ORDER BY*/
+/* GROUP BY is better than SELECT DISTINCT when using aggeregate functions*/
+/* Always include the field that you GROUP BY in the select statement*/

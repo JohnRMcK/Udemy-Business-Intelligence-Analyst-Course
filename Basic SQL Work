@@ -197,3 +197,57 @@ ORDER BY first_name , last_name ASC;
 /* GROUP BY must be placed after WHERE and before ORDER BY*/
 /* GROUP BY is better than SELECT DISTINCT when using aggeregate functions*/
 /* Always include the field that you GROUP BY in the select statement*/
+
+SELECT 
+    first_name, COUNT(first_name)
+FROM
+    employees
+GROUP BY first_name
+ORDER BY first_name;
+/* edit column headers to make them look more professional.*/
+
+SELECT 
+    first_name, COUNT(first_name) as names_count
+FROM
+    employees
+GROUP BY first_name
+ORDER BY first_name;
+
+/* The HAVING command is like WHERE but comes after an applies to the GROUP BY command.
+After HAVING you can have a condition with an aggragate function while using WHERE cannot*/
+SELECT 
+    *, AVG(salary)
+FROM
+    salaries
+GROUP BY emp_no
+HAVING AVG(salary) > 120000;
+
+/* The WHERE function applies conditions before the data is sorted into groups. Therefore it is WHERE -> GROUP BY -> HAVING*/
+
+SELECT 
+    first_name, COUNT(first_name) AS names_count
+FROM
+    employees
+WHERE
+    hire_date > '1990-01-01'
+GROUP BY first_name
+HAVING names_count < 200
+ORDER BY first_name DESC;
+
+/* HAVING works after GROUP BY for aggregate constraints. */
+SELECT
+    emp_no
+FROM
+	dept_emp
+WHERE
+    from_date > '2000-01-01'
+GROUP BY emp_no
+HAVING COUNT(from_date) > 1
+ORDER BY emp_no; 
+
+SELECT 
+    *
+FROM
+    salaries
+ORDER BY salary DESC
+LIMIT 10;

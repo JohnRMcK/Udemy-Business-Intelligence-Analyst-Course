@@ -1,1 +1,41 @@
 /* This code buids on the same employee database from the udemy course which was pulled from Github*/
+/* Start of part 2.*/
+/* Start of aggregate functions, we already used count in part 1.*/
+
+SELECT 
+    COUNT(DISTINCT dept_no)
+FROM
+    dept_emp;
+
+/* COUNT(*) works for this aggregate function, but noe of the others*/
+
+SELECT 
+    SUM(salary)
+FROM
+    salaries
+WHERE
+    from_date = '1997-01-01';
+    
+SELECT 
+    MAX(emp_no)
+FROM
+    employees;
+    
+SELECT 
+    MIN(emp_no)
+FROM
+    dept_emp;
+
+SELECT 
+    AVG(salary)
+FROM
+    salaries
+WHERE
+    from_date > '1997-01-01';
+    
+SELECT 
+    ROUND(AVG(salary),2)
+FROM
+    salaries
+WHERE
+    from_date > '1997-01-01';
